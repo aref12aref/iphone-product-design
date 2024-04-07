@@ -7,6 +7,7 @@ body{
     width: 100%;
     height: 100vh;
     background: linear-gradient(black,#222222);
+    overflow: hidden;
 }
 header{
     width: 90%;
@@ -18,10 +19,7 @@ header{
     align-items: center;
 }
 header img{
-    width: 5%;
-}
-nav{
-    width: 40%;
+    width: 80px;
 }
 nav ul{
     display: flex;
@@ -29,17 +27,16 @@ nav ul{
     align-items: center;
     list-style-type: none;
 }
-nav ul li{
+nav ul li a{
     padding: 10px;
+    margin: 0 10px;
     width: 60px;
     border-radius: 30px;
     transition: 0.5s;
     text-align: center;
 }
-nav ul li:hover{
-    background: white;
-}
 nav ul li a:hover{
+    background: white;
     color: black;
 }
 ul li a{
@@ -83,7 +80,7 @@ main{
     border-radius: 40px;
     transition: 0.5s;
 }
-.content button:hover, nav ul li:hover{
+.content button:hover, nav ul li a:hover{
     transform: scale(1.1);
     box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.438);
 }
@@ -99,9 +96,56 @@ footer{
     left: 35%;
 }
 footer img{
-    width: 10%;
+    width: 70px;
 }
 footer img:hover{
     transform: scale(1.1);
     cursor: pointer;
+}
+
+@media (max-width:1350px){
+    .content{
+        transform: translateY(0px);
+        width: 50%;
+    }
+}
+@media (max-width:1200px){
+    .content{
+        transform: translateY(0px);
+        width: 60%;
+    }
+    main img{
+        transform: translateX(-120px);
+    }
+    footer img{
+        width: 60px;
+    }
+}
+@media (max-width:900px){
+    .content{
+        transform: translateY(50px);
+        width: 60%;
+    }
+    main img{
+        transform: translateX(-60px);
+        width: 20%;
+    }
+    footer img{
+        width: 40px;
+    }
+}
+@media (max-width:600px){
+    main img{
+        transform: translateX(-20px);
+        width: 25%;
+    }
+    footer img{
+        width: 30px;
+    }
+    header{
+        width: 100%;
+    }
+    nav ul li a{
+        margin: 0 5px;
+    }
 }
